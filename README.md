@@ -1,9 +1,16 @@
 # My Tunes
-    Angular 5
-    Angular universal
     iTunes
     GoogleMaps
-    nodeJS for Restful API
+
+## Technologies
+    Angular 5
+    Angular universal
+    Lazy-loading
+    Material Design
+    Indexed DB
+    NodeJS for Restful API
+    MonoDB
+    PhaserJS
 
 ## Environment
     Angular CLI: 1.7.2
