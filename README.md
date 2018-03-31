@@ -31,11 +31,18 @@
     > npm install -S @angular/platform-server@^5 express 
     > npm install -D ts-loader@^3 webpack-node-externals npm-run-all
     > npm install
+        for errors like .@angular\.compiler.DELETE
+            remove node_modules folder
+            run npm i as admin
     > ng build -prod --build-optimizer --app 0
     > ng build --aot --app 1
+        production
     > npm run build
     > node dist/server.js (to run SSR)
+        development
     > ng serve (for regular development)
+        development with proxy (config in proxy.conf.json)
+    > npm run proxy
 
 ### Development server
 
