@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 // Pages
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { UserHomeComponent } from './user-home/user-home.component';
 
 const routes: Routes = [
     {
@@ -16,6 +17,10 @@ const routes: Routes = [
             {
                 path: 'login',
                 redirectTo: ''
+            },
+            {
+                path: ':id',
+                component: UserHomeComponent
             },
             {
                 path: '',

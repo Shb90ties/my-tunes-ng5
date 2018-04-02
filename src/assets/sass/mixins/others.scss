@@ -1,0 +1,12 @@
+@mixin indicator() {
+  height: 8px;
+  width: 8px;
+  @include margin(0,4px,0,4px);
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+
+  &.active {
+    background-color: map-get($colors,active_track);
+  }
+}

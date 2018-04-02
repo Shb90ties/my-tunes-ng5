@@ -7,11 +7,13 @@ import { RegisterComponent } from './register/register.component';
 
 // Modules
 import { UserRoutingModule } from './user.routing';
+import { UserHomeComponent } from './user-home/user-home.component';
 
 @NgModule({
     declarations: [
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        UserHomeComponent
     ],
     imports: [
         CommonModule,

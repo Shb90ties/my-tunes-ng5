@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app.routing';
 import { UserModule } from './pages/user/user.module';
 
 // Global-Services
-import { GlobalVariablesService } from './services/global-variables/globals-variables.service';
+import { GlobalVariablesService } from './services/global-variables/global-variables.service';
 import { GlobalEventsService } from './services/global-events/global-events.service';
 
 // Global-Components
@@ -19,13 +19,15 @@ import { GlobalEventsService } from './services/global-events/global-events.serv
 // Pages
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { AboutComponent } from './pages/about/about.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'my-tunes-ng5' }),
