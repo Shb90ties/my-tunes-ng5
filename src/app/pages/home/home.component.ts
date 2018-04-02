@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { GlobalsService } from '../../services/globals/globals.service';
 
 @Component({
   selector: 'app-home',
@@ -10,11 +9,9 @@ import { GlobalsService } from '../../services/globals/globals.service';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private titleService: Title,
-    private globals: GlobalsService
+    private titleService: Title
   ) { }
 
-  ngOnInit() { 
-    this.titleService.setTitle(this.globals.getAppName() + ' - Home');
+  ngOnInit() {
   }
 }

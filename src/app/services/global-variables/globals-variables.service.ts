@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class GlobalsService {
+export class GlobalVariablesService {
   private appName: String;
 
   constructor() { 

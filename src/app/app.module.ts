@@ -5,32 +5,39 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-// Services
-import { GlobalsService } from './services/globals/globals.service';
+// Modules
+import { AppRoutingModule } from './app.routing';
+import { UserModule } from './pages/user/user.module';
+
+// Global-Services
+import { GlobalVariablesService } from './services/global-variables/globals-variables.service';
+import { GlobalEventsService } from './services/global-events/global-events.service';
+
+// Global-Components
+
 
 // Pages
 import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
-// Components
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'my-tunes-ng5' }),
     HttpClientModule,
     BrowserTransferStateModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent },
-      { path: 'about', component: AboutComponent },
-      { path: '**', redirectTo: '/' }
-    ])
+    UserModule,
+    AppRoutingModule
   ],
-  providers: [GlobalsService],
+  providers: [
+    GlobalVariablesService,
+    GlobalEventsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

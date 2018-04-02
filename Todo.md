@@ -1,3 +1,4 @@
+https://www.youtube.com/watch?v=_05v0mrNLh0
 github implementation
 Change ot the official? https://www.npmjs.com/package/universal-cli
 <ng-container *ngIf="isBrowser">  in ? @angular/platform-browser
