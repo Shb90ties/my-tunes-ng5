@@ -71,3 +71,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### Info about this project-template
 
 https://medium.com/@evertonrobertoauler/angular-5-universal-with-transfer-state-using-angular-cli-19fe1e1d352c
+
+## Other Guides
+
+#### install Angular Material
+    > npm i -s @angular/cdk
+    > npm i -s @angular/material
+    > npm i -s @angular/animations
+    > npm i -s hammerjs (for geastures support (mobile))
+    > in style.scss @import a prebuild theme from the material folder in node_modules/@angular
+    > in app.module.ts import these
+        - import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+        - import a wanted md component (e.g <md-checkbox>) check, https://material.angular.io/components/ , each one has an API tab with

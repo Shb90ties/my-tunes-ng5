@@ -1,9 +1,13 @@
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+
+// Material Design
+import { MdCheckboxModule } from '@angular/material';
 
 // Modules
 import { AppRoutingModule } from './app.routing';
@@ -31,10 +35,12 @@ import { AboutComponent } from './pages/about/about.component';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'my-tunes-ng5' }),
+    BrowserAnimationsModule,
     HttpClientModule,
     BrowserTransferStateModule,
     UserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MdCheckboxModule
   ],
   providers: [
     GlobalVariablesService,
