@@ -7,6 +7,7 @@
     Angular universal
     Lazy-loading
     Material Design
+    font-awesome
     Indexed DB
     NodeJS for Restful API
     MonoDB
@@ -34,6 +35,8 @@
         for errors like .@angular\.compiler.DELETE
             remove node_modules folder
             run npm i as admin
+        for any other error with .DELETE file not being found
+            rerun npm i
     > ng build -prod --build-optimizer --app 0
     > ng build --aot --app 1
         production

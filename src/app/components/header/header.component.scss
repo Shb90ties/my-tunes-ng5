@@ -1,0 +1,42 @@
+@import '~assets/sass/config.scss';
+
+:host {
+    display: block;
+    height: $header-height + px;
+    z-index: map-get($z-indexes, 'header');
+
+    .app_header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $header-height + px;
+        background-color: $primary;
+        padding: 0 10px;
+        color: $white;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        img {
+            height: 80%;
+            width: auto;
+            order: 1;
+            margin-right: 10px;
+            align-self: center;
+        }
+
+        h1 {
+            @include big-font();
+            line-height: $header-height + px;
+            font-weight: 500;
+            order: 2;
+            align-self: center;
+        }
+
+        .bars_ico {
+            align-self: center;
+        }
+    }
+}

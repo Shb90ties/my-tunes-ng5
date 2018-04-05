@@ -8,6 +8,7 @@ $header-height: 50;
 
 $red: #FF0000;
 $white: #FFFFFF;
+$primary: #007acc;
 
 $colors: (
     main_background: #2b2934,
@@ -44,6 +45,7 @@ $media-breakpoints: (
 );
 
 $z-indexes : (
+  header: 100,
   popup_overlay: 999,
   popup_content: 9999
 );

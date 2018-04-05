@@ -5,7 +5,8 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-// Material Design
+// Plugins
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 // import { MdChe } from '@angular/material;
 
 // Modules
@@ -18,8 +19,8 @@ import { GlobalEventsService } from './services/global-events/global-events.serv
 
 // Api
 import { HttpClientModule } from '@angular/common/http';
-import { ApiHandlerPromisesService } from './services/api-handler/api-handler-promises.service';
-import { ApiHandlerObservablesService } from './services/api-handler/api-handler-observables.service';
+import { ApiHandlerService } from './services/api-handler/api-handler.service';
+import { AsyncApiHanderService } from './services/async-api-handler/async-api-hander.service';
 
 // Global-Components
 import { HeaderComponent } from './components/header/header.component';
@@ -44,6 +45,7 @@ import { AboutComponent } from './pages/about/about.component';
   imports: [
     BrowserModule.withServerTransition({ appId: 'my-tunes-ng5' }),
     BrowserAnimationsModule,
+    AngularFontAwesomeModule,
     HttpClientModule,
     BrowserTransferStateModule,
     UserModule,
@@ -53,8 +55,8 @@ import { AboutComponent } from './pages/about/about.component';
   providers: [
     GlobalVariablesService,
     GlobalEventsService,
-    ApiHandlerPromisesService,
-    ApiHandlerObservablesService
+    ApiHandlerService,
+    AsyncApiHanderService
   ],
   bootstrap: [AppComponent]
 })
