@@ -1,13 +1,12 @@
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
 // Material Design
-import { MdCheckboxModule } from '@angular/material';
+// import { MdChe } from '@angular/material;
 
 // Modules
 import { AppRoutingModule } from './app.routing';
@@ -17,8 +16,13 @@ import { UserModule } from './pages/user/user.module';
 import { GlobalVariablesService } from './services/global-variables/global-variables.service';
 import { GlobalEventsService } from './services/global-events/global-events.service';
 
-// Global-Components
+// Api
+import { HttpClientModule } from '@angular/common/http';
+import { ApiHandlerPromisesService } from './services/api-handler/api-handler-promises.service';
+import { ApiHandlerObservablesService } from './services/api-handler/api-handler-observables.service';
 
+// Global-Components
+import { HeaderComponent } from './components/header/header.component';
 
 // Pages
 import { HomeComponent } from './pages/home/home.component';
@@ -28,7 +32,11 @@ import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
+      // global
     AppComponent,
+    HeaderComponent,
+
+      // pages
     HomeComponent,
     NotFoundComponent,
     AboutComponent
@@ -40,11 +48,13 @@ import { AboutComponent } from './pages/about/about.component';
     BrowserTransferStateModule,
     UserModule,
     AppRoutingModule,
-    MdCheckboxModule
+    // MdCheckboxModule
   ],
   providers: [
     GlobalVariablesService,
-    GlobalEventsService
+    GlobalEventsService,
+    ApiHandlerPromisesService,
+    ApiHandlerObservablesService
   ],
   bootstrap: [AppComponent]
 })

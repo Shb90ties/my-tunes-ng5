@@ -3,8 +3,10 @@ github implementation
 Change ot the official? https://www.npmjs.com/package/universal-cli
 <ng-container *ngIf="isBrowser">  in ? @angular/platform-browser
 Repository on github with gitignore
-Event-Bus (global events/triggers with register)
-	header => icon scaled on page changing
+cast.subscribe ... https://www.youtube.com/watch?v=49QM3KkOKXs
+	Event-Bus (global events/triggers with register)
+		header => icon scaled on page changing
+icons scss font-face class maker
 lazy-loader
 Modules-seperation
 process.on-browser variable

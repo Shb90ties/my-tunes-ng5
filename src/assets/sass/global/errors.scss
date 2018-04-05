@@ -1,0 +1,9 @@
+blockquote.error {
+    display: inline-block;
+    width: auto;
+    color: $white;
+    background-color: $red;
+    border-radius: 4px solid $red;
+    @include small-font();
+    line-height: 2em;
+}

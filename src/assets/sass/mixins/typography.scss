@@ -1,0 +1,29 @@
+@mixin tiny-font() {
+    font-size: 0.6em;
+    line-height: 0.8em;
+}
+
+@mixin small-font() {
+    font-size: 0.8em;
+    line-height: 1em;
+}
+
+@mixin medium-font() {
+    font-size: 1em;
+    line-height: 1.2em;
+}
+
+@mixin big-font() {
+    font-size: 1.2em;
+    line-height: 1.4em;
+}
+
+@mixin large-font() {
+    font-size: 1.4em;
+    line-height: 1.6em;
+}
+
+@mixin giant-font() {
+    font-size: 1.8em;
+    line-height: 2em;
+}

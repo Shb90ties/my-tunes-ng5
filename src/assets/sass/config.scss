@@ -1,7 +1,13 @@
 @import 'vendors/bi-app/bi-app-ltr';
 @import "fonts";
 
-$dfd: white;
+  // mixins
+@import "mixins/typography.scss";
+
+$header-height: 50;
+
+$red: #FF0000;
+$white: #FFFFFF;
 
 $colors: (
     main_background: #2b2934,
