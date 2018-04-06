@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 // Plugins
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import {MatSidenavModule} from '@angular/material/sidenav';
 // import { MdChe } from '@angular/material;
 
 // Modules
@@ -24,6 +25,7 @@ import { AsyncApiHanderService } from './services/async-api-handler/async-api-ha
 
 // Global-Components
 import { HeaderComponent } from './components/header/header.component';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
 
 // Pages
 import { HomeComponent } from './pages/home/home.component';
@@ -36,6 +38,7 @@ import { AboutComponent } from './pages/about/about.component';
       // global
     AppComponent,
     HeaderComponent,
+    SideNavComponent,
 
       // pages
     HomeComponent,
@@ -48,9 +51,12 @@ import { AboutComponent } from './pages/about/about.component';
     AngularFontAwesomeModule,
     HttpClientModule,
     BrowserTransferStateModule,
+      // angular-material
+    MatSidenavModule,
+
+      // app-modules
     UserModule,
     AppRoutingModule,
-    // MdCheckboxModule
   ],
   providers: [
     GlobalVariablesService,

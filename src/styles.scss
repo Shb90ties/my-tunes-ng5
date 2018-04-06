@@ -7,6 +7,8 @@
 @import '~assets/sass/global/resets.scss';
 @import '~assets/sass/global/errors.scss';
 
+@include scrollbar();
+
 body {
     margin: 0;
     padding: 0;

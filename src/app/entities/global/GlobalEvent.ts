@@ -1,7 +1,7 @@
 export class GlobalEvent {
-    private event: any;
+    private event;
 
-    constructor(event?: any) {
+    constructor(event?) {
         if (event) {
             this.event = event;
         } else {
@@ -11,7 +11,7 @@ export class GlobalEvent {
         }
     }
 
-    public set(event: any): void {
+    public set(event): void {
         this.event = event;
     }
 

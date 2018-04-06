@@ -3,12 +3,17 @@
 
   // mixins
 @import "mixins/typography.scss";
+@import "mixins/scrollbar.scss";
 
 $header-height: 50;
 
+
 $red: #FF0000;
 $white: #FFFFFF;
+$scroll_gray: #AAA;
+$scroll_gray_pale: #e0e0e0;
 $primary: #007acc;
+$primary_pale: #0099ff;
 
 $colors: (
     main_background: #2b2934,

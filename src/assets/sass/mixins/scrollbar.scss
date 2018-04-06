@@ -1,74 +1,30 @@
-@mixin scrollbar($color){
-
-    ::-webkit-scrollbar {
-        width: 5px;
-        height: 10px;
-        cursor: pointer;
-    }
-    ::-webkit-scrollbar-button {
-        width: 0px;
-        height: 0px;
-    }
-    ::-webkit-scrollbar-thumb {
-        background: #ffffff;
-        border: 0px none #ffffff;
-        border-radius: 50px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background: #ffffff;
-    }
-    ::-webkit-scrollbar-thumb:active {
-        background: #ffffff;
-    }
-    ::-webkit-scrollbar-track {
-        background: $color;
-        border: 0px none #ffffff;
-        border-radius: 10px;
-    }
-    ::-webkit-scrollbar-track:hover {
-        background: $color;
-    }
-    ::-webkit-scrollbar-track:active {
-        background: $color;
-    }
-    ::-webkit-scrollbar-corner {
-        background: transparent;
-    }
-}
-
-@mixin table_scrollbar($color){
-
-  ::-webkit-scrollbar {
-    width: 15px;
-    height: 15px;
+@mixin scrollbar() {
+  ::-webkit-scrollbar-button { 
+    display: none;
+    height: 13px;
+    background-color: $scroll_gray; 
   }
-  ::-webkit-scrollbar-button {
-    width: 0px;
-    height: 0px;
+  ::-webkit-scrollbar-button:hover { 
+    background-color: $scroll_gray; 
+  } 
+  ::-webkit-scrollbar-thumb { 
+    background-color: $primary;
   }
-  ::-webkit-scrollbar-thumb {
-    background: #ffffff;
-    border: none;
-    border-radius: 0;
+  ::-webkit-scrollbar-thumb:hover { 
+    background-color: $primary_pale;
   }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #ffffff;
-  }
-  ::-webkit-scrollbar-thumb:active {
-    background: #ffffff;
-  }
-  ::-webkit-scrollbar-track {
-    background: $color;
-    border: 0px none #ffffff;
-    border-radius: 0;
-  }
-  ::-webkit-scrollbar-track:hover {
-    background: $color;
-  }
-  ::-webkit-scrollbar-track:active {
-    background: $color;
-  }
-  ::-webkit-scrollbar-corner {
-    background: transparent;
+  ::-webkit-scrollbar-track { 
+    background-color: $scroll_gray_pale; 
+  } 
+  ::-webkit-scrollbar-track:hover { 
+    background-color: $scroll_gray_pale; 
+  } 
+  ::-webkit-scrollbar { 
+    width: 10px; 
   }
 }
+
+/*
+  generator
+    https://darrylhuffman.com/sites/Scrollbar-gen/
+*/

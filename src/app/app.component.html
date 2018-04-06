@@ -1,2 +1,9 @@
 <app-header></app-header>
-<router-outlet></router-outlet>
+
+<mat-drawer-container autosize class="main_container">
+  <mat-drawer #drawer mode="side">
+      <app-side-nav></app-side-nav>
+  </mat-drawer>
+
+  <router-outlet></router-outlet>
+</mat-drawer-container>

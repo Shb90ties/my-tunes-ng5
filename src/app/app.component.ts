@@ -1,6 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TransferState, makeStateKey, Title, Meta } from '@angular/platform-browser';
+
+  // services
+import { GlobalEventsService } from './services/global-events/global-events.service';
+
+  // components
+import { MatDrawer } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +15,17 @@ import { TransferState, makeStateKey, Title, Meta } from '@angular/platform-brow
 })
 export class AppComponent implements OnInit {
 
-  title = 'app';
+  public title: string = 'app';
+  @ViewChild(MatDrawer) drawer: MatDrawer;
 
-  dogs: any;
+  // dogs: any;
 
   constructor(
     private http: HttpClient,
     private state: TransferState,
     private titleService: Title,
-    private metaService: Meta
+    private metaService: Meta,
+    private globalEvents: GlobalEventsService
   ) { }
 
   ngOnInit() {
@@ -34,5 +42,11 @@ export class AppComponent implements OnInit {
 
     this.titleService.setTitle('My Tunes');
     this.metaService.addTag({name: 'description', content: 'find them all!'});
+  }
+
+  ngAfterViewInit() {
+    this.globalEvents.setToggleSideNav(() => {
+      this.drawer.toggle();
+    });
   }
 }

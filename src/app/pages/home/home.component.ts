@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   private test: Test;
   private testClass: TestClass;
-  private errorMSG: string = '';
+  public errorMSG: string = '';
 
   constructor(
     private titleService: Title,

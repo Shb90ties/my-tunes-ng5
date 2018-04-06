@@ -1,0 +1,10 @@
+@import '~assets/sass/config.scss';
+
+:host {
+    display: block;
+    height: auto;
+
+    .main_container {
+        min-height: calc(100vh - #{$header-height}px);
+    }
+}

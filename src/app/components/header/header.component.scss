@@ -22,8 +22,6 @@
         img {
             height: 80%;
             width: auto;
-            order: 1;
-            margin-right: 10px;
             align-self: center;
         }
 
@@ -31,7 +29,6 @@
             @include big-font();
             line-height: $header-height + px;
             font-weight: 500;
-            order: 2;
             align-self: center;
         }
 
