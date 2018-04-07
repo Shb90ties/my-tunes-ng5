@@ -65,17 +65,25 @@ export class AppComponent implements OnInit {
       this.isSideNavOpen = false;
       this.globals.setIsSideNavOpen(this.isSideNavOpen);
     });
+
+    this.globalEvents.addWindowScrollEvent('ddd', ()=> {
+      console.log('testing!!');
+    })
   }
 
   @HostListener('window:scroll', ['$event']) private runScrollEvents ($event): void {
-    this.globalEvents.windowScrollEvents.forEach(globalEvent => {
-      globalEvent.trigger($event);
-    });
+    if (this.globalEvents.windowScrollEvents.size > 0) {
+      this.globalEvents.windowScrollEvents.forEach(globalEvent => {
+        globalEvent.trigger($event);
+      });
+    }
   }
 
   @HostListener('window:click', ['$event']) private runClickEvents ($event): void {
-    this.globalEvents.windowClickEvents.forEach(globalEvent => {
-      globalEvent.trigger($event);
-    });
+    if (this.globalEvents.windowClickEvents.size > 0) {
+      this.globalEvents.windowClickEvents.forEach(globalEvent => {
+        globalEvent.trigger($event);
+      });
+    }
   }
 }

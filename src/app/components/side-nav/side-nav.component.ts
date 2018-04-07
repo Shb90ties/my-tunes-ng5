@@ -13,9 +13,6 @@ import { GlobalVariablesService } from '../../services/global-variables/global-v
 })
 export class SideNavComponent implements OnInit {
 
-  private headerHeight: number;
-  public scrollTop: number = 0;
-
   constructor(
     private globalEvents: GlobalEventsService,
     private globals: GlobalVariablesService
@@ -25,7 +22,6 @@ export class SideNavComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    
   }
 
 }

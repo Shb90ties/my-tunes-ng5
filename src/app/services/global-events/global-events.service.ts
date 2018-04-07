@@ -18,6 +18,7 @@ export class GlobalEventsService {
   constructor() { 
     this.toggleSideNav = new GlobalEvent();
     this.windowScrollEvents = new Map<string, GlobalEvent>();
+    this.windowClickEvents = new Map<string, GlobalEvent>();
   }
 
   isEventValid(event): boolean {
