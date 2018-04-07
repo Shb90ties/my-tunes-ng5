@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 // Plugins
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 // import { MdChe } from '@angular/material;
 
 // Modules
@@ -53,7 +53,7 @@ import { AboutComponent } from './pages/about/about.component';
     AngularFontAwesomeModule,
     HttpClientModule,
     BrowserTransferStateModule,
-      // angular-material
+      // angular material
     MatSidenavModule,
 
       // app-modules

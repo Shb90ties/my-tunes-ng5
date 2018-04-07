@@ -1,5 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/fromEvent';
+
+  // services
 import { GlobalEventsService } from '../../services/global-events/global-events.service';
+import { GlobalVariablesService } from '../../services/global-variables/global-variables.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -8,21 +13,19 @@ import { GlobalEventsService } from '../../services/global-events/global-events.
 })
 export class SideNavComponent implements OnInit {
 
-  @ViewChild('appSideNav') el: ElementRef;
+  private headerHeight: number;
+  public scrollTop: number = 0;
 
   constructor(
-    private globalEvents: GlobalEventsService
+    private globalEvents: GlobalEventsService,
+    private globals: GlobalVariablesService
   ) { }
 
   ngOnInit() {
   }
 
   ngAfterViewInit() {
-    this.globalEvents.addWindowScrollEvent('sidenav-scroll', () => {
-      if (this.el) {
-        console.log('calculate <>>> ', this.el);
-      }
-    });
+    
   }
 
 }

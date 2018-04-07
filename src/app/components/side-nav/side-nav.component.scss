@@ -2,14 +2,13 @@
 
 :host {
     display: block;
-    position: relative;
     width: 260px;
     height: 100%;
 
     .side_nav_container {
         display: flex;
-        position: fixed;
-        top: 0;
+        position: sticky;
+        top: $header-height + px;
         left: 0;
         width: 100%;
         flex-direction: column;

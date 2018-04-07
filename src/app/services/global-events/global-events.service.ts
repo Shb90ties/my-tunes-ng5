@@ -10,7 +10,9 @@ import { GlobalEvent } from '../../entities/global/GlobalEvent';
 export class GlobalEventsService {
 
   public windowScrollEvents: Map<string, GlobalEvent>;
-      // map of events that gets triggered when the window is scrolled using @HostListener, executed at app.component.ts
+  /** map of events that gets triggered when the window is scrolled using @HostListener, executed at app.component.ts */
+  public windowClickEvents: Map<string, GlobalEvent>;
+  /** map of events that gets triggered when there was a click anywhere on the window using @HostListener, executed at app.component.ts */
   public toggleSideNav: GlobalEvent;
 
   constructor() { 
@@ -42,6 +44,20 @@ export class GlobalEventsService {
   removeWindowScrollEvent(key): void {
     if (this.windowScrollEvents.get(key)) {
       this.windowScrollEvents.delete(key);
+    } else {
+      console.error(`no such event as ${key}`);
+    }
+  }
+
+  addWindowClickEvent(key, event): void {
+    if (this.isEventValid(event)) {
+      this.windowClickEvents.set(key, new GlobalEvent(event));
+    }
+  }
+
+  removeWindowClickEvent(key): void {
+    if (this.windowScrollEvents.get(key)) {
+      this.windowClickEvents.delete(key);
     } else {
       console.error(`no such event as ${key}`);
     }
