@@ -1,0 +1,75 @@
+@mixin full-transition($effect) {
+  transition: $effect;
+  -webkit-transition: $effect;
+  -moz-transition: $effect;
+  -o-transition: $effect;
+}
+
+@mixin full-transform($effect) {
+  transform: $effect;
+  -webkit-transform: $effect;
+  -moz-transform: $effect;
+  -o-transform: $effect;
+  -ms-transform: $effect;
+}
+
+@mixin full-animation($animation) {
+  animation: $animation;
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -o-animation: $animation;
+  -ms-animation: $animation;
+}
+
+@mixin full-animation-direction($direction) {
+  animation-direction: $direction;
+  -webkit-animation-direction: $direction;
+  -moz-animation-direction: $direction;
+  -o-animation-direction: $direction;
+}
+
+@mixin clear-transition() {
+  transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  -ms-transform: none;
+}
+
+@mixin clear-transform() {
+  transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  -ms-transform: none;
+}
+
+@mixin full-transform-origin($transport) {
+  transform-origin: $transport;
+  -webkit-transform-origin: $transport;
+  -moz-transform-origin: $transport;
+  -o-transform-origin: $transport;
+  -ms-transform-origin: $transport;
+}
+
+@mixin Rotate($deg){
+  -webkit-transform: rotate($deg+deg);
+  -moz-transform: rotate($deg+deg);
+  -ms-transform: rotate($deg+deg);
+  -o-transform: rotate($deg+deg);
+  transform: rotate($deg+deg);
+}
+
+@mixin GradientAnimation(){
+  background: linear-gradient(-45deg, rgba(0,0,0,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.3),rgba(0,0,0,0.4));
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 1s ease infinite;
+  -moz-animation: Gradient 1s ease infinite;
+  animation: Gradient 1s ease infinite;
+}
+
+@mixin opactyAnimation($duration){
+  -webkit-animation: OpacityIn $duration+s ease;
+  -moz-animation: OpacityIn $duration+s ease;
+  animation: OpacityIn $duration+s ease;
+}

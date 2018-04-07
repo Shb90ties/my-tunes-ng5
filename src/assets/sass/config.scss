@@ -5,10 +5,11 @@
 @import "mixins/typography.scss";
 @import "mixins/scrollbar.scss";
 @import "mixins/utils.scss";
+@import "mixins/transitions.scss";
 
 $header-height: 50;
 $footer-height: 25;
-$page-min-height: calc(100vh - #{$header-height}px - #{$footer-height}px);
+$page-min-height: calc(3000px - #{$header-height}px - #{$footer-height}px);
 
 
 $red: #FF0000;

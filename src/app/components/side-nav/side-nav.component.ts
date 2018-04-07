@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
 
@@ -12,6 +12,9 @@ import { GlobalVariablesService } from '../../services/global-variables/global-v
   styleUrls: ['./side-nav.component.scss']
 })
 export class SideNavComponent implements OnInit {
+
+  public scrollTop: number = 0;
+  @Input('is-open') isSideNavOpen: boolean = false;
 
   constructor(
     private globalEvents: GlobalEventsService,

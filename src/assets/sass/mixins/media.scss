@@ -1,7 +1,3 @@
-// =============================================================================
-// Break points
-// =============================================================================
-
 // Write media query
 @mixin respond-above($breakpoint-name) {
   $breakpoint-value: map_get($breakpoints, $breakpoint-name);

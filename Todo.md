@@ -5,11 +5,8 @@ css-grid on the base of each page
 images/icons to fonts generator
 svg generator
 lazy-loader
-process.on-browser variable
-Angular Bootstrap 3.3.7
-Bootstrap reset scss
+use angular form
 HTML 5 shv.js addition + Edge meta + reset file
-Angular Material Design
 Indexed-DB for localstorage
 iTunes for Angular
 
@@ -22,6 +19,9 @@ Or Java Server with my-SQL DB
 
 Gaming JS
 using Phaser / pixiJS
+
+create small react,emberjs project
+summrieze ruby language https://www.youtube.com/watch?v=Dji9ALCgfpM
 
 Work Practice
 VueJS app with Cli + Laravel PhpMyAdmin + React app in some pages

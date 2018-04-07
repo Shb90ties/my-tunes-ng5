@@ -1,4 +1,4 @@
-<nav class="side_nav_container">
+<nav class="side_nav_container" [ngClass]="[isSideNavOpen ? 'open': '']">
   <a class="nav_btn" href="/login">
     <fa name="home" size="lb" class="nav_ico"></fa>
     <span class="nav_txt">Home Page</span>
