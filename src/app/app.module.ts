@@ -26,6 +26,7 @@ import { AsyncApiHanderService } from './services/async-api-handler/async-api-ha
 // Global-Components
 import { HeaderComponent } from './components/header/header.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 // Pages
 import { HomeComponent } from './pages/home/home.component';
@@ -39,6 +40,7 @@ import { AboutComponent } from './pages/about/about.component';
     AppComponent,
     HeaderComponent,
     SideNavComponent,
+    FooterComponent,
 
       // pages
     HomeComponent,

@@ -5,6 +5,12 @@
     height: auto;
 
     .main_container {
-        min-height: calc(100vh - #{$header-height}px);
+        min-height: $page-min-height;
+        background-color: $page_bg;
+        overflow: initial;
+
+        .mat-drawer {
+            overflow: initial;            
+        }
     }
 }

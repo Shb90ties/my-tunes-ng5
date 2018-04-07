@@ -1,21 +1,16 @@
 https://www.youtube.com/watch?v=_05v0mrNLh0
-github implementation
-Change ot the official? https://www.npmjs.com/package/universal-cli
 <ng-container *ngIf="isBrowser">  in ? @angular/platform-browser
-Repository on github with gitignore
-cast.subscribe ... https://www.youtube.com/watch?v=49QM3KkOKXs
-	Event-Bus (global events/triggers with register)
+css-grid on the base of each page
 		header => icon scaled on page changing
-icons scss font-face class maker
+images/icons to fonts generator
+svg generator
 lazy-loader
-Modules-seperation
 process.on-browser variable
-Lazy loader
 Angular Bootstrap 3.3.7
 Bootstrap reset scss
 HTML 5 shv.js addition + Edge meta + reset file
 Angular Material Design
-Indexed-DB for all the user data
+Indexed-DB for localstorage
 iTunes for Angular
 
 

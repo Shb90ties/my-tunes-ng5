@@ -1,0 +1,24 @@
+// =============================================================================
+// Break points
+// =============================================================================
+
+// Write media query
+@mixin respond-above($breakpoint-name) {
+  $breakpoint-value: map_get($breakpoints, $breakpoint-name);
+
+  @if $breakpoint-value {
+    @media screen and (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-below($breakpoint-name) {
+  $breakpoint-value: map_get($breakpoints, $breakpoint-name);
+
+  @if $breakpoint-value {
+    @media screen and (max-width: $breakpoint-value) {
+      @content;
+    }
+  }
+}

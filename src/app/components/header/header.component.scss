@@ -4,6 +4,7 @@
     display: block;
     height: $header-height + px;
     z-index: map-get($z-indexes, 'header');
+    position: relative;
 
     .app_header {
         position: fixed;

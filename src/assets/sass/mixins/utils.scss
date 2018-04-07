@@ -1,0 +1,31 @@
+$browser-context: 16;
+
+@function px-to-em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+
+@function px-to-rem($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+/*
+    examples: 
+        font-size: px-to-em(38px);
+        line-height: px-to-rem(42px);
+*/

@@ -27,3 +27,9 @@
     font-size: 1.8em;
     line-height: 2em;
 }
+
+@mixin ellipsis() {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

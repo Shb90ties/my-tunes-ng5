@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TransferState, makeStateKey, Title, Meta } from '@angular/platform-browser';
 
@@ -47,6 +47,12 @@ export class AppComponent implements OnInit {
   ngAfterViewInit() {
     this.globalEvents.setToggleSideNav(() => {
       this.drawer.toggle();
+    });
+  }
+
+  @HostListener('click') something () {
+    this.globalEvents.windowScrollEvents.forEach(globalEvent => {
+      globalEvent.trigger();
     });
   }
 }

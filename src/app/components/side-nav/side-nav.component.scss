@@ -1,0 +1,46 @@
+@import '~assets/sass/config.scss';
+
+:host {
+    display: block;
+    position: relative;
+    width: 260px;
+    height: 100%;
+
+    .side_nav_container {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        max-height: $page-min-height;
+        overflow-y: scroll;
+
+        .nav_btn {
+            @include medium-font();
+            line-height: px-to-em(40px);
+            @include text-align(left);
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            color: $primary;
+
+            .nav_ico {
+                align-self: center;
+                margin: 0 10px;
+            }
+            .nav_txt {
+                align-content: center;
+                @include ellipsis();
+                font-weight: bold;
+                max-width: 100%;
+            }
+            &:hover {
+                color: $primary_pale;
+            }
+            &:active {
+                color: $primary_red;
+            }
+        }
+    }
+}

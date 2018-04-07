@@ -9,17 +9,41 @@ import { GlobalEvent } from '../../entities/global/GlobalEvent';
 @Injectable()
 export class GlobalEventsService {
 
+  public windowScrollEvents: Map<string, GlobalEvent>;
+      // map of events that gets triggered when the window is scrolled using @HostListener, executed at app.component.ts
   public toggleSideNav: GlobalEvent;
 
   constructor() { 
     this.toggleSideNav = new GlobalEvent();
+    this.windowScrollEvents = new Map<string, GlobalEvent>();
+  }
+
+  isEventValid(event): boolean {
+    if (typeof event === 'function') {
+      return true;
+    } else {
+      console.error('invlid event registered');
+      return false;
+    }
   }
 
   setToggleSideNav(event): void {
-    if (typeof event === 'function') {
+    if (this.isEventValid(event)) {
       this.toggleSideNav.set(event);
+    }
+  }
+
+  addWindowScrollEvent(key, event): void {
+    if (this.isEventValid(event)) {
+      this.windowScrollEvents.set(key, new GlobalEvent(event));
+    }
+  }
+
+  removeWindowScrollEvent(key): void {
+    if (this.windowScrollEvents.get(key)) {
+      this.windowScrollEvents.delete(key);
     } else {
-      console.error('invlid event registered');
+      console.error(`no such event as ${key}`);
     }
   }
 

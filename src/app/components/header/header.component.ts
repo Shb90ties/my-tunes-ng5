@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 // services
 import { GlobalEventsService } from '../../services/global-events/global-events.service';
+import { GlobalVariablesService } from '../../services/global-variables/global-variables.service';
 
 @Component({
   selector: 'app-header',
@@ -9,11 +10,20 @@ import { GlobalEventsService } from '../../services/global-events/global-events.
 })
 export class HeaderComponent implements OnInit {
 
+  @ViewChild('appHeader') el: ElementRef;
+  private headerHeight: number;
+
   constructor(
-    private globalEvents: GlobalEventsService
+    private globalEvents: GlobalEventsService,
+    private globals: GlobalVariablesService
   ) { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    this.headerHeight = this.el.nativeElement.offsetHeight;
+    this.globals.setHeaderHeight(this.headerHeight);
   }
 
   toggleSideNav(): void {

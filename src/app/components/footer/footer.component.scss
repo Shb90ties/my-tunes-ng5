@@ -1,0 +1,26 @@
+@import "~assets/sass/config.scss";
+
+:host {
+    display: block;
+    height: $footer-height + px;
+    position: relative;
+    z-index: map-get($z-indexes, 'footer');
+
+    .app_footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: $footer-height + px;
+        background-color: $primary;
+        @include text-align(right);
+
+        p {
+            @include small-font();
+            line-height: $footer-height + px;
+            @include text-align(right);
+            color: $white;
+            font-weight: 500;
+        }
+    }
+}

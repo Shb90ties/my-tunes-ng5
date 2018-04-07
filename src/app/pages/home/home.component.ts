@@ -4,6 +4,7 @@ import { Title } from '@angular/platform-browser';
   // Services
 import { ApiHandlerService } from '../../services/api-handler/api-handler.service';
 import { AsyncApiHanderService } from '../../services/async-api-handler/async-api-hander.service';
+import { GlobalVariablesService } from '../../services/global-variables/global-variables.service';
 
   // Entities
 import { Test, TestClass } from '../../entities/api/test';
@@ -22,7 +23,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private titleService: Title,
     private http: ApiHandlerService,
-    private asyncHttp: AsyncApiHanderService
+    private asyncHttp: AsyncApiHanderService,
+    private globals: GlobalVariablesService
   ) { }
 
   async ngOnInit() {

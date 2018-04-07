@@ -4,53 +4,34 @@
   // mixins
 @import "mixins/typography.scss";
 @import "mixins/scrollbar.scss";
+@import "mixins/utils.scss";
 
 $header-height: 50;
+$footer-height: 25;
+$page-min-height: calc(3000px - #{$header-height}px - #{$footer-height}px);
 
 
 $red: #FF0000;
 $white: #FFFFFF;
 $scroll_gray: #AAA;
 $scroll_gray_pale: #e0e0e0;
-$primary: #007acc;
-$primary_pale: #0099ff;
-
-$colors: (
-    main_background: #2b2934,
-    text_default: #fff,
-    border_default: rgba(255,255,255,.2),
-    dark_background: #201E26,
-    app_white: #fff,
-    app_black: #000,
-    main_menu_icons: #635e73,
-    filters_text: rgba(255,255,255,.5),
-    filters_border: rgba(255,255,255,.4),
-    search_background: #2D83F8,
-    search_border: #2D83F8,
-    scrollbar_color: #201e26,
-    track_info_color: #2b2934,
-    active_track: #54c59b,
-    slider_color: #504d53,
-    event_point_color:#ff3568,
-    event_point_blur:#612539,
-    event_point_selected_color:#00FF00,
-    event_point_selected_blur:#32CD32,
-    track_hover: #ff3568,
-    gray_title_row_bg: #ececec,
-    pale_row_bg: #f9f9f9,
-    table_seperator: rgba(190,189,194,0.7),
-    active_row: #87bf66,
-    a_col_text: #7f7c8b,
-    a_scroll: #b1b0b3,
-    picked_row: #f2f2f2
-);
+$primary: #2a7fb8;
+$primary_red: #e74a43;
+$primary_pale: rgba(42, 127, 184, 0.5);
+$page_bg: #fafafa;
 
 $media-breakpoints: (
-  'iphone': 320px
+  'iphone': 320px,
+  'phone': 480px,
+  'ipad': 768px,
+  'tablet': 1024px,
+  'laptop': 1224px,
+  'desktop': 1824px
 );
 
 $z-indexes : (
   header: 100,
+  footer: 100,
   popup_overlay: 999,
   popup_content: 9999
 );
