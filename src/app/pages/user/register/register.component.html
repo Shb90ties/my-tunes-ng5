@@ -1,3 +1,60 @@
-<p>
-  register works!
-</p>
+<!--<div *ngIf="!name; else forminfo">
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+    <div class="form-container">
+      <div class="row columns">
+
+        <h1>My Reactive Form</h1>
+
+        <label>Name
+          <input type="text" formControlName="name">
+        </label>
+        <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{ titleAlert }}</div>
+
+
+        <label>Description
+          <textarea formControlName="description"></textarea>
+        </label>
+        <div class="alert" *ngIf="!rForm.controls['description'].valid && rForm.controls['description'].touched">You must specify a description that's between 30 and 500 characters.</div>
+
+
+        <label for="validate">Minimum of 3 Characters</label>
+        <input type="checkbox" name="validate" formControlName="validate" value="1"> On
+
+        <input type="submit" class="button expanded" value="Submit Form" [disabled]="!rForm.valid">
+      </div>
+    </div>
+  </form>
+</div>-->
+
+<form class="register_form" [formGroup]="registerForm" (ngSubmit)="submit(registerForm.value)">
+    <div class="row">
+        <div class="col-sm-6 input_wrapper">
+            <label for="fname">First Name</label>
+            <input type="text" name="fname" formControlName="fname">
+        </div>
+
+        <div class="col-sm-6 input_wrapper">
+            <label for="lname">Last Name</label>
+            <input type="text" name="lname" formControlName="lname">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 input_wrapper">
+            <label for="password">Password</label>
+            <input type="password" name="password" formControlName="password">
+        </div>
+
+        <div class="col-sm-6 input_wrapper">
+            <label for="email">Email</label>
+            <input type="email" name="email" formControlName="email">
+        </div>
+    </div>
+
+    <input type="submit" class="submit_btn" [ngClass]="{'disabled_btn': (!registerForm.valid)}"
+            value="send" [disabled]="(!registerForm.valid)">
+
+    <p class="error_notice" ng-if="(!registerForm.valid)">
+        fill all the forms
+    </p>
+</form>

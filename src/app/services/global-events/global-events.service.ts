@@ -31,18 +31,21 @@ export class GlobalEventsService {
   }
 
   setToggleSideNav(event): void {
+    /** register the nav bar toggle event, should only be set by the nav-bar component */
     if (this.isEventValid(event)) {
       this.toggleSideNav.set(event);
     }
   }
 
   addWindowScrollEvent(key, event): void {
+    /** adds an event to the window scroll, needs to be removed when the component is destroyed */
     if (this.isEventValid(event)) {
       this.windowScrollEvents.set(key, new GlobalEvent(event));
     }
   }
 
   removeWindowScrollEvent(key): void {
+    /** removes an event from the window scroll trigger */
     if (this.windowScrollEvents.get(key)) {
       this.windowScrollEvents.delete(key);
     } else {
@@ -51,12 +54,14 @@ export class GlobalEventsService {
   }
 
   addWindowClickEvent(key, event): void {
+    /** adds an event to the window click, needs to be removed when the component is destroyed or event no longer needed */
     if (this.isEventValid(event)) {
       this.windowClickEvents.set(key, new GlobalEvent(event));
     }
   }
 
   removeWindowClickEvent(key): void {
+    /** removes an event from the window scroll click */
     if (this.windowScrollEvents.get(key)) {
       this.windowClickEvents.delete(key);
     } else {

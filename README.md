@@ -7,6 +7,7 @@
     Angular universal
     Lazy-loading
     Material Design
+    Bootstrap
     font-awesome
     Indexed DB
     NodeJS for Restful API

@@ -1,3 +1,7 @@
+// Global variables, set of variables that are shared throughout all the components
+// to access them import the service
+// to add a variable, the variable name needs to start with '_' , the getter needs to be the variable name, setter needs to start with 'set'
+
 import { Injectable } from '@angular/core';
 
 @Injectable()

@@ -5,6 +5,7 @@ import { TransferState, makeStateKey, Title, Meta } from '@angular/platform-brow
   // services
 import { GlobalEventsService } from './services/global-events/global-events.service';
 import { GlobalVariablesService } from './services/global-variables/global-variables.service';
+import { TranslateService } from '@ngx-translate/core';
 
   // components
 import { MatDrawer } from '@angular/material';
@@ -16,6 +17,9 @@ import { MatDrawer } from '@angular/material';
 })
 export class AppComponent implements OnInit {
 
+  public user = {
+    name: 'my-tunes'
+  };
   public title: string = 'app';
   public isSideNavOpen: boolean = false;
   @ViewChild(MatDrawer) drawer: MatDrawer;
@@ -28,8 +32,11 @@ export class AppComponent implements OnInit {
     private titleService: Title,
     private metaService: Meta,
     private globalEvents: GlobalEventsService,
-    private globals: GlobalVariablesService
-  ) { }
+    private globals: GlobalVariablesService,
+    private translate: TranslateService
+  ) {
+    translate.setDefaultLang('en');
+  }
 
   ngOnInit() {
     // this.dogs = this.state.get(DOGS_KEY, null as any);
@@ -47,11 +54,18 @@ export class AppComponent implements OnInit {
     this.metaService.addTag({name: 'description', content: 'find them all!'});
   }
 
+  switchLanguage(language: string): void {
+    this.translate.use(language);
+  }
+
   ngAfterViewInit() {
     this.setSideNavGlobaly();
   }
 
   private setSideNavGlobaly() {
+      /** links the drawer component open/close events to the global variables
+       *  allows other components to know if its open or not
+       *  link a toggle fuunction to the global events, allows other components to toggle it from the global events service */
     this.globalEvents.setToggleSideNav(() => {
       this.drawer.toggle();
     });
@@ -67,15 +81,17 @@ export class AppComponent implements OnInit {
     });
   }
 
-  // @HostListener('window:scroll', ['$event']) private runScrollEvents ($event): void {
-  //   if (this.globalEvents.windowScrollEvents.size > 0) {
-  //     this.globalEvents.windowScrollEvents.forEach(globalEvent => {
-  //       globalEvent.trigger($event);
-  //     });
-  //   }
-  // }
+  @HostListener('window:scroll', ['$event']) private runScrollEvents ($event): void {
+      /** runs when the user scrolls, triggers a map of events from the global-events service */
+    if (this.globalEvents.windowScrollEvents.size > 0) {
+      this.globalEvents.windowScrollEvents.forEach(globalEvent => {
+        globalEvent.trigger($event);
+      });
+    }
+  }
 
   @HostListener('window:click', ['$event']) private runClickEvents ($event): void {
+    /** runs when the user clicks on the screen, triggers a map of events from the global-events service */
     if (this.globalEvents.windowClickEvents.size > 0) {
       this.globalEvents.windowClickEvents.forEach(globalEvent => {
         globalEvent.trigger($event);

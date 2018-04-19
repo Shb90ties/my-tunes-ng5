@@ -1,0 +1,77 @@
+@import '~assets/sass/config.scss';
+
+:host {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .register_form {
+        display: flex;
+        flex-direction: column;
+        align-self: auto;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+
+        .row {
+            margin: 0;
+
+            .input_wrapper {
+                padding: 10px 0;
+                @include text-align(left);
+                @include medium-font();
+
+                label {
+                    display: block;
+                    padding: 5px;
+                    @include ellipsis();
+                }
+                input {
+                    display: block;
+                    width: calc(100% - 10px);
+                }
+            }
+        }
+        .submit_btn {
+            @include big-font();
+            line-height: px-to-em(25px);
+            background-color: $primary;
+            border: 4px;
+            width: 150px;
+            margin: 15px auto 0;
+            text-align: center;
+            color: $white;
+            cursor: pointer;
+
+            &.disabled_btn {
+                background-color: $primary_pale;
+                cursor: auto;
+            }
+        }
+        .error_notice {
+            color: $red;
+            @include small-font();
+            font-weight: bold;
+            width: 100%;
+            @include text-align(left);
+            padding: 10px 0;
+        }
+    }
+
+    @include respond-below('ipad') {
+        .register_form {
+            .row {
+                .input_wrapper {
+                    padding: 0 10px;
+
+                    input {
+                        width: 100%;
+                    }
+                }
+            }
+            .error_notice {
+                text-align: center;
+            }
+        }
+    }
+}

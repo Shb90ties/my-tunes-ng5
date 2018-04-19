@@ -1,16 +1,39 @@
 <nav class="side_nav_container" [ngClass]="[isSideNavOpen ? 'open': '']">
-  <a class="nav_btn" href="/login">
+  <a class="nav_btn" routerLink="/">
     <fa name="home" size="lb" class="nav_ico"></fa>
     <span class="nav_txt">Home Page</span>
   </a>
 
-  <a class="nav_btn" href="#">
+  <button class="nav_btn" (click)="togglePersonalArea()">
     <fa name="user" size="lb" class="nav_ico"></fa>
     <span class="nav_txt">Personal Area</span>
-  </a>
+    <fa name="angle-right" size="lb" class="toggle_ico" [ngClass]="[personalArea.isArrowFlipped ? 'flipped' : '']"></fa>
+  </button>
+  <!-- Personal area Menu -->
+  <ul class="inner_menu" [ngClass]="[personalArea.isOpen ? 'open_inner': '']">
+    <li>
+      <a class="nav_btn" routerLink="user/register">
+        <fa name="registered" size="lb" class="nav_ico"></fa>
+        <span class="nav_txt">Register</span>
+      </a>
+    </li>
+    <li>
+      <a class="nav_btn" routerLink="user/login">
+        <fa name="lock" size="lb" class="nav_ico"></fa>
+        <span class="nav_txt">Login</span>
+      </a>
+    </li>
+    <li>
+      <a class="nav_btn" routerLink="user/test-user">
+        <fa name="flag" size="lb" class="nav_ico"></fa>
+        <span class="nav_txt">Main</span>
+      </a>
+    </li>
+  </ul>
 
-  <a class="nav_btn" href="#">
+  <a class="nav_btn" routerLink="/about">
     <fa name="info-circle" size="lb" class="nav_ico"></fa>
     <span class="nav_txt">About us</span>
   </a>
+
 </nav>

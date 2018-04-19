@@ -1,4 +1,6 @@
-/** Api-Handler Uses Observables and return class objects, cannot be used for Async Await functions */
+/** Api-Handler Uses Observables and return class objects, cannot be used for Async Await functions
+ *  used for most ajax requests to the server except async,await requests that happens in the ngOnInit methods
+ */
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
@@ -23,6 +25,7 @@ export class ApiHandlerService {
 
 
   private errorHandler(error: HttpErrorResponse) {
+    /** throw and error to the component that called the function */
     console.error(error.message || 'Server error...');
     return Observable.throw(error.message || 'Server error...');
   }
@@ -35,6 +38,7 @@ export class ApiHandlerService {
   }
 
   getAsClass(): Observable<TestClass> {
+      /** an example of plainToClass usage */
     let url: string = `${this.url}/test.json`;
     return this.http.get<TestClass>(url)
             .map(res => plainToClass(TestClass, res as Object))

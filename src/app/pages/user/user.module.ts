@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Pages
 import { LoginComponent } from './login/login.component';
@@ -17,7 +19,10 @@ import { UserHomeComponent } from './user-home/user-home.component';
     ],
     imports: [
         CommonModule,
-        UserRoutingModule
+        UserRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgbModule
     ]
 })
 export class UserModule { }

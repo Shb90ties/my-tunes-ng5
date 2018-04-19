@@ -13,18 +13,38 @@ import { GlobalVariablesService } from '../../services/global-variables/global-v
 })
 export class SideNavComponent implements OnInit {
 
-  public scrollTop: number = 0;
   @Input('is-open') isSideNavOpen: boolean = false;
+  public personalArea: {
+    isOpen: boolean,
+    isArrowFlipped: boolean
+  };
 
   constructor(
     private globalEvents: GlobalEventsService,
     private globals: GlobalVariablesService
-  ) { }
+  ) { 
+    this.personalArea = {
+      isOpen: false,
+      isArrowFlipped: false
+    }
+  }
 
   ngOnInit() {
   }
 
   ngAfterViewInit() {
+  }
+
+  togglePersonalArea(): void {
+    /** toggle the personal area mini-menu, method called when the user clicks on the personal area main button */
+    this.personalArea.isOpen = !this.personalArea.isOpen;
+    if (!this.personalArea.isOpen) { // timeout for the mini-menu toggle animation
+      setTimeout(() => {
+        this.personalArea.isArrowFlipped = false;
+      }, 300);
+    } else {
+      this.personalArea.isArrowFlipped = true;
+    }
   }
 
 }

@@ -8,9 +8,13 @@
         min-height: $page-min-height;
         background-color: $page_bg;
         overflow: initial;
+        overflow-x: hidden;
 
         .mat-drawer {
             overflow: initial;            
+        }
+        .page_content {
+            width: 100%;
         }
     }
 }

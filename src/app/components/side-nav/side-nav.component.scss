@@ -34,6 +34,18 @@
             .nav_ico {
                 align-self: center;
                 margin: 0 10px;
+                width: px-to-em(15px);
+            }
+            .toggle_ico {
+                align-self: center;
+                @include big-font();
+                font-weight: bold;
+                @include margin-left(auto);
+                @include margin-right(10px);
+
+                &.flipped {
+                    @include full-transform(rotate(90deg));
+                }
             }
             .nav_txt {
                 align-content: center;
@@ -46,6 +58,23 @@
             }
             &:active {
                 color: $primary_red;
+            }
+        }
+        .inner_menu {
+            display: flex;
+            flex-direction: column;
+            @include padding-left(px-to-em(40px));
+            @include small-font();
+            font-weight: 500;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height cubic-bezier(.46,.04,.97,.51) .3s;
+            
+            .nav_btn {
+                line-height: px-to-em(25px);
+            }
+            &.open_inner {
+                max-height: 800px;
             }
         }
     }
