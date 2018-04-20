@@ -1,6 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterForm } from '../../../entities/forms/register';
+import { TranslateService } from '@ngx-translate/core';
+
+enum errorKeys {
+  default = 'error-fill',
+  email = 'error-email',
+  password = 'error-password',
+  fname = 'error-name',
+  lname = 'error-name'
+};
 
 @Component({
   selector: 'app-register',
@@ -11,20 +20,20 @@ export class RegisterComponent implements OnInit {
 
   public model: RegisterForm = new RegisterForm();
   registerForm: FormGroup;
+  public errorMsg: string = errorKeys.default;
 
-    //   fname: string;
-    // lname: string;
-    // password: string;
-    // email: string;
-
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private translate: TranslateService
+  ) {
     this.registerForm = formBuilder.group({
       'fname': ['', Validators.required],
       'lname': ['', Validators.required],
       'password': ['', Validators.compose([
         Validators.required,
         Validators.minLength(7),
-        Validators.maxLength(10)
+        Validators.maxLength(10),
+        Validators.pattern('[a-zA-Z]+')
       ])],
       'email': ['', Validators.compose([
         Validators.required,
@@ -36,11 +45,12 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     /** Register to the form observable whenever there's a change */
-    this.registerForm.get('validate').valueChanges.subscribe(
-      (validate) => {
-        console.log('validate: ', validate);
-      }
-    );
+    // this.registerForm.get('validate').valueChanges.subscribe(
+    //   (validate) => {
+    //     console.log('validate: ', validate);
+    //   }
+    // );
+    this.registerForm.valueChanges.subscribe(() => { this.updateErrorMsgOnChange(); });
   }
 
 
@@ -65,8 +75,25 @@ export class RegisterComponent implements OnInit {
   //   this.name = post.name;
   // }
 
-  submit(post: any) {
+  submit(post: any): void {
     console.log('post: ', post);
+  }
+
+  reset(): void {
+    this.registerForm.reset();
+  }
+  
+  updateErrorMsgOnChange(): void {
+    /** uupdates/remove the error msg when one of the input changes */
+    for (let inputName in this.registerForm.controls) {
+      let input = this.registerForm.controls[inputName];
+      if (!input.valid && errorKeys[inputName]) {
+        this.errorMsg = errorKeys[inputName];
+        break;
+      } else if (!input.valid) {
+        this.errorMsg = errorKeys.default;
+      }
+    }
   }
 
 }

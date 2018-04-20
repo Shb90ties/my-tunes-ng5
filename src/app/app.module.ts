@@ -38,7 +38,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AboutComponent } from './pages/about/about.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 
@@ -61,6 +61,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     AngularFontAwesomeModule,
     HttpClientModule,
     BrowserTransferStateModule,
+          // translate
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
 
       // angular material
     MatSidenavModule,
@@ -68,15 +76,6 @@ export function HttpLoaderFactory(http: HttpClient) {
       // app-modules
     UserModule,
     AppRoutingModule,
-
-      // translate
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    })
   ],
   providers: [
     GlobalVariablesService,

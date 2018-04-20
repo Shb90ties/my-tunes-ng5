@@ -35,7 +35,12 @@ export class AppComponent implements OnInit {
     private globals: GlobalVariablesService,
     private translate: TranslateService
   ) {
-    translate.setDefaultLang('en');
+    try {
+      let browserLan = translate.getBrowserLang();
+      translate.setDefaultLang(browserLan.match(/en|he/) ? browserLan : 'en');
+    } catch (e) {
+      translate.setDefaultLang('en');
+    }
   }
 
   ngOnInit() {
@@ -60,6 +65,7 @@ export class AppComponent implements OnInit {
 
   ngAfterViewInit() {
     this.setSideNavGlobaly();
+    this.setLanguageSwitcherGlobaly();
   }
 
   private setSideNavGlobaly() {
@@ -78,6 +84,15 @@ export class AppComponent implements OnInit {
     this.drawer.closedStart.subscribe(() => {
       this.isSideNavOpen = false;
       this.globals.setIsSideNavOpen(this.isSideNavOpen);
+    });
+  }
+
+  private setLanguageSwitcherGlobaly() {
+    /** sets the switch language to the global events
+     * to use in other components => globalEventsService.switchLanguage.trigger('he');
+     */
+    this.globalEvents.setSwitchLanguage((language) => {
+      this.switchLanguage(language);
     });
   }
 

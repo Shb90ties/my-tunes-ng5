@@ -1,6 +1,26 @@
 {
-    "title": "sssss",
     "header": {
-        "title": "yes!"
+        "title": "My Tunes"
+    },
+    "menu": {
+        "home": "Home Page",
+        "personal-title": "Personal Area",
+        "personal-main": "Main Page",
+        "register": "Register",
+        "login": "Login",
+        "languages": "Languages",
+        "about": "About"
+    },
+    "register": {
+        "fname": "First Name",
+        "lname": "Last Name",
+        "password": "Password",
+        "email": "eMail",
+        "send": "send",
+        "reset": "reset",
+        "error-fill": "Fill in all the fields",
+        "error-email": "Full in a valid email",
+        "error-password": "Password must be between 7 to 10 letters only",
+        "error-name": "Please fill in a valid name"
     }
 }

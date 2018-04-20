@@ -14,9 +14,11 @@ export class GlobalEventsService {
   public windowClickEvents: Map<string, GlobalEvent>;
   /** map of events that gets triggered when there was a click anywhere on the window using @HostListener, executed at app.component.ts */
   public toggleSideNav: GlobalEvent;
+  public switchLanguage: GlobalEvent;
 
   constructor() { 
-    this.toggleSideNav = new GlobalEvent();
+    this.toggleSideNav = new GlobalEvent(null, true); // setting it to be perminant event //
+    this.switchLanguage = new GlobalEvent(null, true); // setting it to be perminant event //
     this.windowScrollEvents = new Map<string, GlobalEvent>();
     this.windowClickEvents = new Map<string, GlobalEvent>();
   }
@@ -66,6 +68,13 @@ export class GlobalEventsService {
       this.windowClickEvents.delete(key);
     } else {
       console.error(`no such event as ${key}`);
+    }
+  }
+
+  setSwitchLanguage(event): void {
+    /** register the switch system event, should only be set by the app.component.ts */
+    if (this.isEventValid(event)) {
+      this.switchLanguage.set(event);
     }
   }
 

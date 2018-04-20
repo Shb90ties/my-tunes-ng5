@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateModule } from '@ngx-translate/core';
 
 // Pages
 import { LoginComponent } from './login/login.component';
@@ -22,7 +23,8 @@ import { UserHomeComponent } from './user-home/user-home.component';
         UserRoutingModule,
         FormsModule,
         ReactiveFormsModule,
-        NgbModule
+        NgbModule,
+        TranslateModule
     ]
 })
 export class UserModule { }

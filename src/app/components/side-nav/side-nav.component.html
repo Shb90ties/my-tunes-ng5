@@ -1,12 +1,12 @@
 <nav class="side_nav_container" [ngClass]="[isSideNavOpen ? 'open': '']">
   <a class="nav_btn" routerLink="/">
     <fa name="home" size="lb" class="nav_ico"></fa>
-    <span class="nav_txt">Home Page</span>
+    <span class="nav_txt">{{ 'menu.home' | translate:user }}</span>
   </a>
 
   <button class="nav_btn" (click)="togglePersonalArea()">
     <fa name="user" size="lb" class="nav_ico"></fa>
-    <span class="nav_txt">Personal Area</span>
+    <span class="nav_txt">{{ 'menu.personal-title' | translate:user }}</span>
     <fa name="angle-right" size="lb" class="toggle_ico" [ngClass]="[personalArea.isArrowFlipped ? 'flipped' : '']"></fa>
   </button>
   <!-- Personal area Menu -->
@@ -14,26 +14,45 @@
     <li>
       <a class="nav_btn" routerLink="user/register">
         <fa name="registered" size="lb" class="nav_ico"></fa>
-        <span class="nav_txt">Register</span>
+        <span class="nav_txt">{{ 'menu.register' | translate:user }}</span>
       </a>
     </li>
     <li>
       <a class="nav_btn" routerLink="user/login">
         <fa name="lock" size="lb" class="nav_ico"></fa>
-        <span class="nav_txt">Login</span>
+        <span class="nav_txt">{{ 'menu.login' | translate:user }}</span>
       </a>
     </li>
     <li>
       <a class="nav_btn" routerLink="user/test-user">
         <fa name="flag" size="lb" class="nav_ico"></fa>
-        <span class="nav_txt">Main</span>
+        <span class="nav_txt">{{ 'menu.personal-main' | translate:user }}</span>
       </a>
     </li>
   </ul>
 
   <a class="nav_btn" routerLink="/about">
     <fa name="info-circle" size="lb" class="nav_ico"></fa>
-    <span class="nav_txt">About us</span>
+    <span class="nav_txt">{{ 'menu.about' | translate:user }}</span>
   </a>
+
+  <button class="nav_btn" (click)="toggleLanguages()">
+    <fa name="globe" size="lb" class="nav_ico"></fa>
+    <span class="nav_txt">{{ 'menu.languages' | translate:user }}</span>
+    <fa name="angle-right" size="lb" class="toggle_ico" [ngClass]="[languages.isArrowFlipped ? 'flipped' : '']"></fa>
+  </button>
+  <!-- Language -->
+  <ul class="inner_menu" [ngClass]="[languages.isOpen ? 'open_inner': '']">
+    <li>
+      <button class="nav_btn" (click)="changeLanguage('en')">
+        <span class="nav_txt">English</span>
+      </button>
+    </li>
+    <li>
+      <button class="nav_btn" (click)="changeLanguage('he')">
+        <span class="nav_txt">עברית</span>
+      </button>
+    </li>
+  </ul>
 
 </nav>

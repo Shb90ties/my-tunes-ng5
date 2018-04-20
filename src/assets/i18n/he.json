@@ -1,3 +1,26 @@
 {
-    "main": "לההה"
+    "header": {
+        "title": "My Tunes"
+    },
+    "menu": {
+        "home": "עמוד הבית",
+        "personal-title": "אזור אישי",
+        "register": "הרשם",
+        "login": "התחבר",
+        "personal-main": "עמוד אישי",
+        "languages": "שפות",
+        "about": "על האתר"
+    },
+    "register": {
+        "fname": "שם פרטי",
+        "lname": "שם משפחה",
+        "password": "סיסמא",
+        "email": "אימייל",
+        "send": "שלח",
+        "reset": "נקה",
+        "error-fill": "מלאו את כל השדות",
+        "error-email": "הכניסו אימייל תקין",
+        "error-password": "סיסמא צריכה להיות בין 7 ל-10 אותיות באנגלית בלבד",
+        "error-name": "הכניסו שם תקין"
+    }
 }
